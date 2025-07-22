@@ -6,7 +6,13 @@ export default {
     './node_modules/preline/preline.js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'img1': "url('/src/assets/imgs/cobra.jpg')",
+        'img2': "url('/src/assets/imgs/benz.jpg')",
+        'img3': "url('/src/assets/imgs/challenger.jpg')",
+      }
+    }
   },
   plugins: [require('preline/plugin')],
 }

@@ -1,11 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import GalleryPage from './pages/gallery';
-import Homepage from './pages/home';
+import 'preline';
+import Homepage from './pages/home'
 import ServicesPage from './pages/services';
+import GalleryPage from './pages/gallery';
+import AboutUsPage from './pages/about';
 import NotFoundPage from './pages/error';
+import Befaf from './pages/befaf';
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
@@ -20,12 +24,20 @@ const router = createBrowserRouter([
   {
     path: '/gallery',
     element: <GalleryPage/>
+  },
+  {
+    path: '/beforenafter',
+    element: <Befaf/>
+  },
+  {
+    path: '/about',
+    element: <AboutUsPage/>
   }
 ])
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )

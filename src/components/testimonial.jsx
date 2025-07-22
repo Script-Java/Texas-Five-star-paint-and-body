@@ -1,122 +1,98 @@
-const Testimonials = () => {
-    return (
-      <div className="">
-        {/* Testimonials */}
-        <div className="overflow-hidden bg-gray-800 dark:bg-neutral-950">
-          <div className="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-            {/* Title */}
-            <div className="max-w-2xl w-3/4 lg:w-1/2 mb-6 sm:mb-10 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-semibold">
-                Loved by business and individuals across the globe
-              </h2>
-            </div>
-            {/* End Title */}
-            {/* Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Card */}
-              <div className="flex h-auto">
-                <div className="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
-                  <div className="flex-auto p-4 md:p-6">
-                    <p className="text-base italic md:text-lg text-gray-800 dark:text-neutral-200">
-                      " With Preline, we're able to easily track our performance
-                      in full detail. It's become an essential tool for us to
-                      grow and engage with our audience. "
-                    </p>
-                  </div>
-                  <div className="p-4 bg-gray-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0">
-                        <img
-                          className="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                          src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
-                          alt="Image Description"
-                        />
-                      </div>
-                      <div className="grow ms-3">
-                        <p className="text-sm sm:text-base font-semibold text-gray-800 dark:text-neutral-200">
-                          Josh Tyson
-                        </p>
-                        <p className="text-xs text-gray-500 dark:text-neutral-400">
-                          Product Manager | Capsule
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* End Card */}
-              {/* Card */}
-              <div className="flex h-auto">
-                <div className="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
-                  <div className="flex-auto p-4 md:p-6">
-                    <p className="text-base italic md:text-lg text-gray-800 dark:text-neutral-200">
-                      " In September, I will be using this theme for 2 years. I
-                      went through multiple updates and changes and I'm very
-                      glad to see the consistency and effort made by the team. "
-                    </p>
-                  </div>
-                  <div className="p-4 bg-gray-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0">
-                        <img
-                          className="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
-                          alt="Image Description"
-                        />
-                      </div>
-                      <div className="grow ms-3">
-                        <p className="text-sm sm:text-base font-semibold text-gray-800 dark:text-neutral-200">
-                          Luisa
-                        </p>
-                        <p className="text-xs text-gray-500 dark:text-neutral-400">
-                          Senior Director of Operations | Fitbit
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* End Card */}
-              {/* Card */}
-              <div className="flex h-auto">
-                <div className="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
-                  <div className="flex-auto p-4 md:p-6">
-                    <p className="text-base italic md:text-lg text-gray-800 dark:text-neutral-200">
-                      " Refreshing and Thought provoking design and it changes
-                      my view about how I design the websites. Great typography,
-                      modern clean white design, nice tones of the color. "
-                    </p>
-                  </div>
-                  <div className="p-4 bg-gray-100 rounded-b-xl md:px-7 dark:bg-neutral-800">
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0">
-                        <img
-                          className="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                          src="https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=900&h=900&q=80"
-                          alt="Image Description"
-                        />
-                      </div>
-                      <div className="grow ms-3">
-                        <p className="text-sm sm:text-base font-semibold text-gray-800 dark:text-neutral-200">
-                          Alisa Williams
-                        </p>
-                        <p className="text-xs text-gray-500 dark:text-neutral-400">
-                          Entrepreneur | Happy customer
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* End Card */}
-            </div>
-            {/* End Grid */}
+import React from 'react';
+import { FaStar, FaGoogle } from 'react-icons/fa';
 
+const testimonialsData = [
+  {
+    quote: "My truck needed the hood, roof, and side panel painted. The team did a fantastic job for a terrific price. Mary is very professional and kept me informed. I highly recommend them!",
+    name: "Fred Souza",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXbc1tPYkeNqGSuwfPR7ebINGs1zxW0tgsainR2KDtR7AqqRkVfmQ=w36-h36-p-rp-mo-br100",
+    rating: 5,
+  },
+  {
+    quote: "I wish I could give more than 5 stars! The best car related experience of my life! The owners were SO kind, so quick, and were even able to fix the existing bumper flawlessly!",
+    name: "Kaela O",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXb9L_dnUxTPOEL4fZbMhMOFdU6p6x6VD5L4qNO30vo0gOOu9SA=w36-h36-p-rp-mo-br100",
+    rating: 5,
+  },
+  {
+    quote: "The staff was professional and friendly, and the service was top-notch. They went above and beyond to ensure that my car was repaired to perfection. The quality of workmanship is outstanding.",
+    name: "Rasoul Bisokhan",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXw3tBKj72_h_o_ZcnVs8nopvKNVTPajWwGACTqMkpJZve6YdOy=w36-h36-p-rp-mo-br100",
+    rating: 5,
+  },
+  {
+    quote: "I took my 2013 Cadillac Escalade to Five Star Paint and Body for hail damage and I must say that I’m very pleased with the work, timing, and courtesy received. They all were so nice and respectable. Especially Mrs. Mary, every time I spoke with her was a pleasure. Thank you guys for your hard work and I definitely appreciate it thank you again.",
+    name: "Brandon Matthews",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXg7C-17r1uN9R8YqofOkB7hG5IWRYuvznGQSfpdYYGj4JYqRs=w36-h36-p-rp-mo-br100",
+    rating: 5,
+  },
+  {
+    quote: "I would like to take a moment to express my sincere gratitude for the outstanding service I received from Mary and the team. Her thorough explanations and attentive approach made me feel comfortable throughout the entire process. I was particularly impressed by the efficiency with which my car was returned to me. The turn around time was remarkably quick, and the quality of the work exceeded my expectations. My vehicle now looks as good as new, and I couldn't be happier with the results. Thank you once again for making my car looks brand new again!",
+    name: "Bella Moncada",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjW1Eqa75cBYwPPNQMTbVu_QQpyltE8ScwlhrvY157DoQXn1Ih1Y0w=w36-h36-p-rp-mo-br100",
+    rating: 5,
+  },
+];
+
+const TestimonialCard = ({ quote, name, avatar, rating }) => (
+  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col h-full">
+    <div className="flex items-center text-yellow-400 gap-1 mb-4">
+      {[...Array(rating)].map((_, i) => <FaStar key={i} />)}
+    </div>
+    <blockquote className="text-gray-300 leading-relaxed flex-grow">"{quote}"</blockquote>
+    <figcaption className="flex items-center gap-4 mt-6">
+      <img
+        className="w-12 h-12 rounded-full object-cover"
+        src={avatar}
+        alt={`Avatar of ${name}`}
+        loading="lazy"
+      />
+      <div>
+        <div className="font-bold text-white">{name}</div>
+        <div className="text-sm text-gray-400">Verified Google Review</div>
+      </div>
+    </figcaption>
+  </div>
+);
+
+const Testimonials = () => {
+  const duplicatedTestimonials = [...testimonialsData, ...testimonialsData];
+
+  return (
+    <section className="bg-neutral-950 text-white py-20 sm:py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Column: Title and CTA */}
+          <div className="relative z-10">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight">
+              Trusted by Drivers Across Garland
+            </h2>
+            <p className="mt-6 text-lg text-gray-400 max-w-lg">
+              We're proud of our 5-star rating. But don't just take our word for it—see what our satisfied customers have to say about their experience.
+            </p>
+            <a
+              href="https://www.google.com/maps/place/Texas+Five+Star+Paint+%26+Body/@32.9202014,-96.6320146,16.25z/data=!4m8!3m7!1s0x864c1d1967da4713:0x2a5fdb5d453210e!8m2!3d32.9210903!4d-96.6327826!9m1!1b1!16s%2Fg%2F11rndn42mm?entry=ttu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-bold py-4 px-8 rounded-md text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-900/50"
+            >
+              Read All Reviews
+              <FaGoogle />
+            </a>
+          </div>
+
+          {/* Right Column: Scrolling Testimonials */}
+          <div className="relative h-[600px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]">
+            <div className="animate-marquee-vertical space-y-6">
+              {duplicatedTestimonials.map((testimonial, index) => (
+                <TestimonialCard key={index} {...testimonial} />
+              ))}
+            </div>
           </div>
         </div>
-        {/* End Testimonials */}
       </div>
-    );
-}
- 
+    </section>
+  );
+};
+
 export default Testimonials;

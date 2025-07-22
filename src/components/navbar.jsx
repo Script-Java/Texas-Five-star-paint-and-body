@@ -1,135 +1,139 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { FaStar } from "react-icons/fa";
+import { FiPhone, FiMapPin, FiMenu, FiX, FiArrowUpRight } from "react-icons/fi";
 
 const Navbar = () => {
-  return (
-    <div className="">
-      {/* Announcement Banner */}
-      <div
-        id="ab-full-width-with-dismiss-button-on-blue-bg"
-        className="hs-removing:-translate-y-full bg-blue-600"
-      >
-        <div className="max-w-[85rem] px-4 py-4 sm:px-6 lg:px-8 mx-auto">
-          <div className="flex">
-            <p className="text-white">
-              Preline UI Figma is live.{" "}
-              <a
-                className="decoration-2 underline font-medium hover:text-white/80"
-                href="../figma.html"
-              >
-                Learn more
-              </a>
-            </p>
-            <div className="ps-3 ms-auto">
-              <button
-                type="button"
-                className="inline-flex rounded-lg p-1.5 text-white/80 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-600 focus:ring-white"
-                data-hs-remove-element="#ab-full-width-with-dismiss-button-on-blue-bg"
-              >
-                <span className="sr-only">Dismiss</span>
-                <svg
-                  className="flex-shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M18 6 6 18" />
-                  <path d="m6 6 12 12" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* End Announcement Banner */}
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-      <header class=">flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800">
-        <nav
-          class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
-          aria-label="Global"
-        >
-          <div class="flex items-center justify-between">
-            <a class="flex-none text-xl font-semibold dark:text-white" href="#">
-              Brand
-            </a>
-            <div class="sm:hidden">
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'About Us', path: '/about' },
+  ];
+
+  const googleMapsUrl = "https://www.google.com/maps/place/Texas+Five+Star+Paint+%26+Body/@32.9210948,-96.6353575,17z/data=!3m1!4b1!4m6!3m5!1s0x864c1d1967da4713:0x2a5fdb5d453210e!8m2!3d32.9210903!4d-96.6327826!16s%2Fg%2F11rndn42mm?entry=ttu";
+
+  return (
+    <>
+      <header className="fixed top-0 left-0 w-full z-50 bg-neutral-950 shadow-lg">
+        <nav className="max-w-[85rem] w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-24">
+            {/* Logo */}
+            <Link to="/" className="flex-none text-white">
+              <div className="flex flex-col">
+                <span className="text-2xl font-semibold whitespace-nowrap">
+                  Texas Five Star Paint & Body
+                </span>
+                <div className="flex items-center gap-2 text-red-600 mt-1">
+                  <FaStar size={14} />
+                  <FaStar size={14} />
+                  <FaStar size={14} />
+                  <FaStar size={14} />
+                  <FaStar size={14} />
+                </div>
+              </div>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <NavLink
+                  key={link.name}
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `font-medium text-gray-300 hover:text-white transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-red-600 after:transition-all after:duration-300 ${
+                      isActive ? 'text-white after:w-full' : 'hover:after:w-full'
+                    }`
+                  }
+                >
+                  {link.name}
+                </NavLink>
+              ))}
+            </div>
+
+            {/* Desktop CTA & Mobile Menu Toggle */}
+            <div className="flex items-center gap-4">
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-bold py-2 px-5 rounded-md text-sm transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-900/50"
+              >
+                Get Directions
+              </a>
               <button
                 type="button"
-                class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10"
-                data-hs-collapse="#navbar-collapse-with-animation"
-                aria-controls="navbar-collapse-with-animation"
-                aria-label="Toggle navigation"
+                aria-label="Toggle menu"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="lg:hidden text-white hover:text-red-600 transition-colors"
               >
-                <svg
-                  class="hs-collapse-open:hidden flex-shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="3" x2="21" y1="6" y2="6" />
-                  <line x1="3" x2="21" y1="12" y2="12" />
-                  <line x1="3" x2="21" y1="18" y2="18" />
-                </svg>
-                <svg
-                  class="hs-collapse-open:block hidden flex-shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M18 6 6 18" />
-                  <path d="m6 6 12 12" />
-                </svg>
+                <FiMenu size={28} />
               </button>
-            </div>
-          </div>
-          <div
-            id="navbar-collapse-with-animation"
-            class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
-          >
-            <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-              <a class="font-medium text-blue-500" href="#" aria-current="page">
-                Landing
-              </a>
-              <a
-                class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-                href="#"
-              >
-                Account
-              </a>
-              <a
-                class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-                href="#"
-              >
-                Work
-              </a>
-              <a
-                class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-                href="#"
-              >
-                Blog
-              </a>
             </div>
           </div>
         </nav>
       </header>
-    </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 z-50 bg-neutral-950/95 backdrop-blur-xl transition-transform duration-500 ease-in-out lg:hidden ${
+          isMenuOpen ? 'transform translate-x-0' : 'transform -translate-x-full'
+        }`}
+      >
+        <div className="flex justify-end p-5">
+          <button
+            type="button"
+            aria-label="Close menu"
+            onClick={() => setIsMenuOpen(false)}
+            className="text-gray-400 hover:text-red-600 transition-colors"
+          >
+            <FiX size={32} />
+          </button>
+        </div>
+        <div className="flex flex-col items-center justify-center h-full -mt-16">
+          <nav className="flex flex-col items-center gap-8">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) =>
+                  `text-3xl font-bold transition-colors ${
+                    isActive ? 'text-red-600' : 'text-gray-300 hover:text-white'
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
+            ))}
+          </nav>
+          <div className="mt-12 text-center">
+            <a
+              href={googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMenuOpen(false)}
+              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-900/50"
+            >
+              Get Directions
+              <FiArrowUpRight />
+            </a>
+            <div className="mt-8 flex flex-col gap-4 text-gray-400">
+               <a href="tel:2142999240" className="flex items-center justify-center gap-3 hover:text-white">
+                  <FiPhone />
+                  <span>(214)-299-9240</span>
+               </a>
+               <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 hover:text-white">
+                  <FiMapPin />
+                  <span>214 Range Dr, Garland, TX</span>
+               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

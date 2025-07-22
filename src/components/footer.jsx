@@ -1,105 +1,121 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaStar, FaGoogle, FaFacebook, FaInstagram, FaYelp } from 'react-icons/fa';
+import { FiPhone, FiMail, FiMapPin, FiArrowUpRight } from 'react-icons/fi';
+
 const Footer = () => {
-    return (
-      <div classname>
-        {/* ========== FOOTER ========== */}
-        <footer className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
-          {/* Grid */}
-          <div className="text-center">
-            <div>
-              <a
-                className="flex-none text-xl font-semibold text-black"
-                href="#"
-                aria-label="Brand"
-              >
-                Brand
-              </a>
-            </div>
-            {/* End Col */}
-            <div className="mt-3">
-              <p className="text-gray-500">
-                We're part of the{" "}
-                <a
-                  className="font-semibold text-blue-600 hover:text-blue-700"
-                  href="#"
-                >
-                  Htmlstream
-                </a>{" "}
-                family.
-              </p>
-              <p className="text-gray-500">
-                © Preline. 2022 Htmlstream. All rights reserved.
-              </p>
-            </div>
-            {/* Social Brands */}
-            <div className="mt-3 space-x-2">
-              <a
-                className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                href="#"
-              >
-                <svg
-                  className="flex-shrink-0 size-3.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
-                </svg>
-              </a>
-              <a
-                className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                href="#"
-              >
-                <svg
-                  className="flex-shrink-0 size-3.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                </svg>
-              </a>
-              <a
-                className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                href="#"
-              >
-                <svg
-                  className="flex-shrink-0 size-3.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                </svg>
-              </a>
-              <a
-                className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                href="#"
-              >
-                <svg
-                  className="flex-shrink-0 size-3.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z" />
-                </svg>
-              </a>
-            </div>
-            {/* End Social Brands */}
+  const quickLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'About Us', path: '/about' },
+  ];
+
+  const socialLinks = [
+    { icon: FaInstagram, href: 'https://www.instagram.com/texas_five_star_paint_and_body/', label: 'Instagram' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/profile.php?id=100084145820307', label: 'Facebook' },
+    { icon: FaYelp, href: 'https://www.yelp.com/biz/texas-five-star-paint-and-body-garland', label: 'Yelp' },
+    { icon: FaGoogle, href: 'https://www.google.com/maps/place/Texas+Five+Star+Paint+%26+Body/@32.9202014,-96.6320146,16.25z/data=!4m8!3m7!1s0x864c1d1967da4713:0x2a5fdb5d453210e!8m2!3d32.9210903!4d-96.6327826!9m1!1b1!16s%2Fg%2F11rndn42mm?entry=ttu', label: 'Google' },
+  ];
+
+  const googleMapsUrl = "https://www.google.com/maps/place/Texas+Five+Star+Paint+%26+Body/@32.9210948,-96.6353575,17z/data=!3m1!4b1!4m6!3m5!1s0x864c1d1967da4713:0x2a5fdb5d453210e!8m2!3d32.9210903!4d-96.6327826!16s%2Fg%2F11rndn42mm?entry=ttu";
+
+  return (
+    <footer className="bg-neutral-950 text-white">
+      <div className="max-w-[85rem] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {/* Column 1: Brand & CTA */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-1">
+            <Link to="/" className="inline-block mb-6">
+              <div className="flex flex-col">
+                <span className="text-2xl font-semibold whitespace-nowrap">
+                  Texas Five Star Paint & Body
+                </span>
+                <div className="flex items-center gap-2 text-red-600 mt-1">
+                  {[...Array(5)].map((_, i) => <FaStar key={i} size={16} />)}
+                </div>
+              </div>
+            </Link>
+            <p className="text-gray-400 mb-6">
+              Your trusted, I-CAR Gold Class certified auto body shop in Garland, TX. We bring precision, passion, and perfection to every repair.
+            </p>
+            <a
+              href={googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-6 rounded-md text-base transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-900/50"
+            >
+              Get Directions
+              <FiArrowUpRight />
+            </a>
           </div>
-          {/* End Grid */}
-        </footer>
-        {/* ========== END FOOTER ========== */}
+
+          {/* Column 2: Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold uppercase text-gray-300 mb-4">Quick Links</h3>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.path} className="text-gray-400 hover:text-red-600 transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Contact & Hours */}
+          <div>
+            <h3 className="text-lg font-semibold uppercase text-gray-300 mb-4">Contact Us</h3>
+            <ul className="space-y-4 text-gray-400">
+              <li className="flex items-start gap-3">
+                <FiMapPin className="text-red-600 mt-1 flex-shrink-0" size={18} />
+                <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-red-600">
+                  214 Range Dr, <br />
+                  Garland, TX 75040
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <FiPhone className="text-red-600 flex-shrink-0" size={18} />
+                <a href="tel:2142999240" className="hover:text-red-600">(214) 299-9240</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <FiMail className="text-red-600 flex-shrink-0" size={18} />
+                <a href="mailto:texasfivestarpaintandbody@yahoo.com" className="hover:text-red-600 break-all">
+                  texasfivestarpaintandbody@yahoo.com
+                </a>
+              </li>
+            </ul>
+            <h4 className="text-md font-semibold text-gray-300 mt-6 mb-2">Business Hours</h4>
+            <p className="text-sm text-gray-400">Mon - Fri: 8am - 6pm</p>
+            <p className="text-sm text-gray-400">Saturday: 9am - 3pm</p>
+            <p className="text-sm text-gray-400">Sunday: Closed</p>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <p className="text-sm text-gray-500 text-center sm:text-left">
+            © {new Date().getFullYear()} Texas Five Star Paint & Body. All Rights Reserved.
+          </p>
+          <div className="flex items-center gap-4">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="text-gray-500 hover:text-red-600 transition-colors"
+              >
+                <social.icon size={22} />
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
-    );
-}
- 
+    </footer>
+  );
+};
+
 export default Footer;

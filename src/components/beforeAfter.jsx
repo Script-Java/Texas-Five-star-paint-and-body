@@ -1,160 +1,176 @@
-const BeforeAfter = () => {
-    return ( 
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-            <div className="">
-                <div className="max-w-2xl w-3/4 lg:w-1/2 mb-6 sm:mb-10 md:mb-16">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-semibold">
-                    Before and after
-                </h2>
-                </div>
-            </div>
-            {/* Slider */}
-            <div data-hs-carousel="{
-                &quot;loadingClasses&quot;: &quot;opacity-0&quot;
-            }" className="relative p-4">
-            <div className="hs-carousel relative overflow-hidden w-full min-h-96 bg-white rounded-lg">
-                <div className="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-                <div className="hs-carousel-slide">
-                    <div className="flex justify-center h-full bg-gray-100 p-6 dark:bg-neutral-900">
-                    <span className="self-center text-4xl text-gray-800 transition duration-700 dark:text-white">First slide</span>
-                    </div>
-                </div>
-                <div className="hs-carousel-slide">
-                    <div className="flex justify-center h-full bg-gray-200 p-6 dark:bg-neutral-800">
-                    <span className="self-center text-4xl text-gray-800 transition duration-700 dark:text-white">Second slide</span>
-                    </div>
-                </div>
-                <div className="hs-carousel-slide">
-                    <div className="flex justify-center h-full bg-gray-300 p-6 dark:bg-neutral-700">
-                    <span className="self-center text-4xl text-gray-800 transition duration-700 dark:text-white">Third slide</span>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <button type="button" className="hs-carousel-prev hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10">
-                <span className="text-2xl" aria-hidden="true">
-                <svg className="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m15 18-6-6 6-6" />
-                </svg>
-                </span>
-                <span className="sr-only">Previous</span>
-            </button>
-            <button type="button" className="hs-carousel-next hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10">
-                <span className="sr-only">Next</span>
-                <span className="text-2xl" aria-hidden="true">
-                <svg className="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m9 18 6-6-6-6" />
-                </svg>
-                </span>
-            </button>
-            <div className="hs-carousel-pagination flex justify-center absolute bottom-3 start-0 end-0 space-x-2">
-                <span className="hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500" />
-                <span className="hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500" />
-                <span className="hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500" />
-            </div>
-            </div>
-            {/* End Slider */}
+import React, { useState, useRef, useCallback, useEffect } from 'react';
+import { FiArrowLeft, FiArrowRight, FiX } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
+// Image imports
+import b1 from "../assets/img/baf/1.jpg";
+import a1 from "../assets/img/baf/2.jpg";
+import b2 from "../assets/img/baf/3.jpg";
+import a2 from "../assets/img/baf/4.jpg";
+import b3 from "../assets/img/baf/5.jpg";
+import a3 from "../assets/img/baf/6.jpg";
 
-                        {/* Slider */}
-                        <div data-hs-carousel="{
-                &quot;loadingClasses&quot;: &quot;opacity-0&quot;
-            }" className="relative p-4">
-            <div className="hs-carousel relative overflow-hidden w-full min-h-96 bg-white rounded-lg">
-                <div className="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-                <div className="hs-carousel-slide">
-                    <div className="flex justify-center h-full bg-gray-100 p-6 dark:bg-neutral-900">
-                    <span className="self-center text-4xl text-gray-800 transition duration-700 dark:text-white">First slide</span>
-                    </div>
-                </div>
-                <div className="hs-carousel-slide">
-                    <div className="flex justify-center h-full bg-gray-200 p-6 dark:bg-neutral-800">
-                    <span className="self-center text-4xl text-gray-800 transition duration-700 dark:text-white">Second slide</span>
-                    </div>
-                </div>
-                <div className="hs-carousel-slide">
-                    <div className="flex justify-center h-full bg-gray-300 p-6 dark:bg-neutral-700">
-                    <span className="self-center text-4xl text-gray-800 transition duration-700 dark:text-white">Third slide</span>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <button type="button" className="hs-carousel-prev hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10">
-                <span className="text-2xl" aria-hidden="true">
-                <svg className="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m15 18-6-6 6-6" />
-                </svg>
-                </span>
-                <span className="sr-only">Previous</span>
-            </button>
-            <button type="button" className="hs-carousel-next hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10">
-                <span className="sr-only">Next</span>
-                <span className="text-2xl" aria-hidden="true">
-                <svg className="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m9 18 6-6-6-6" />
-                </svg>
-                </span>
-            </button>
-            <div className="hs-carousel-pagination flex justify-center absolute bottom-3 start-0 end-0 space-x-2">
-                <span className="hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500" />
-                <span className="hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500" />
-                <span className="hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500" />
-            </div>
-            </div>
-            {/* End Slider */}
+// Data for the before and after showcases
+const beforeAfterData = [
+  { before: b1, after: a1, title: 'Precision Collision Restoration', description: 'From minor dings to major repairs, our I-CAR certified technicians restore your vehicle to its pre-accident condition with meticulous care.' },
+  { before: b2, after: a2, title: 'Flawless Paint & Finishing', description: 'Using state-of-the-art color matching technology, we deliver seamless paint jobs that blend perfectly with your factory finish.' },
+  { before: b3, after: a3, title: 'Meticulous Attention to Detail', description: 'We believe perfection is in the details. Every repair is inspected to ensure it meets our five-star standard of quality.' },
+];
 
+// Reusable Image Comparison Slider Component
+const ImageComparisonSlider = ({ before, after, isLarge = false }) => {
+  const [sliderPosition, setSliderPosition] = useState(50);
+  const imageContainerRef = useRef(null);
 
+  const handleMove = useCallback((clientX) => {
+    if (!imageContainerRef.current) return;
+    const rect = imageContainerRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    const percent = (x / rect.width) * 100;
+    setSliderPosition(percent);
+  }, []);
 
-                        {/* Slider */}
-                        <div data-hs-carousel="{
-                &quot;loadingClasses&quot;: &quot;opacity-0&quot;
-            }" className="relative p-4">
-            <div className="hs-carousel relative overflow-hidden w-full min-h-96 bg-white rounded-lg">
-                <div className="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-                <div className="hs-carousel-slide">
-                    <div className="flex justify-center h-full bg-gray-100 p-6 dark:bg-neutral-900">
-                    <span className="self-center text-4xl text-gray-800 transition duration-700 dark:text-white">First slide</span>
-                    </div>
-                </div>
-                <div className="hs-carousel-slide">
-                    <div className="flex justify-center h-full bg-gray-200 p-6 dark:bg-neutral-800">
-                    <span className="self-center text-4xl text-gray-800 transition duration-700 dark:text-white">Second slide</span>
-                    </div>
-                </div>
-                <div className="hs-carousel-slide">
-                    <div className="flex justify-center h-full bg-gray-300 p-6 dark:bg-neutral-700">
-                    <span className="self-center text-4xl text-gray-800 transition duration-700 dark:text-white">Third slide</span>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <button type="button" className="hs-carousel-prev hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10">
-                <span className="text-2xl" aria-hidden="true">
-                <svg className="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m15 18-6-6 6-6" />
-                </svg>
-                </span>
-                <span className="sr-only">Previous</span>
-            </button>
-            <button type="button" className="hs-carousel-next hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10">
-                <span className="sr-only">Next</span>
-                <span className="text-2xl" aria-hidden="true">
-                <svg className="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m9 18 6-6-6-6" />
-                </svg>
-                </span>
-            </button>
-            <div className="hs-carousel-pagination flex justify-center absolute bottom-3 start-0 end-0 space-x-2">
-                <span className="hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500" />
-                <span className="hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500" />
-                <span className="hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500" />
-            </div>
-            </div>
-            {/* End Slider */}
+  const handleInteractionStart = (e) => {
+    const onMove = (moveEvent) => {
+      const clientX = moveEvent.touches ? moveEvent.touches[0].clientX : moveEvent.clientX;
+      handleMove(clientX);
+    };
+    const onEnd = () => {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onEnd);
+      document.removeEventListener('touchmove', onMove);
+      document.removeEventListener('touchend', onEnd);
+    };
 
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onEnd);
+    document.addEventListener('touchmove', onMove);
+    document.addEventListener('touchend', onEnd);
+  };
 
+  return (
+    <div
+      ref={imageContainerRef}
+      className="relative w-full select-none group"
+      style={{ aspectRatio: isLarge ? '16/9' : '4/3' }}
+    >
+      <img
+        src={before}
+        alt="Before repair"
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div
+        className="absolute inset-0 w-full h-full overflow-hidden"
+        style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+      >
+        <img
+          src={after}
+          alt="After repair"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div
+        className="absolute top-0 bottom-0 bg-red-600 w-1 cursor-ew-resize"
+        style={{ left: `calc(${sliderPosition}% - 2px)` }}
+        onTouchStart={handleInteractionStart}
+        onMouseDown={handleInteractionStart}
+      >
+        <div className="absolute top-1/2 -translate-y-1/2 -left-5 h-12 w-12 rounded-full bg-red-600 border-4 border-neutral-900 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+          <FiArrowLeft size={20} />
+          <FiArrowRight size={20} />
         </div>
-     );
-}
- 
-export default BeforeAfter;
+      </div>
+       <div className="absolute top-2 left-2 bg-black/50 text-white text-xs font-bold uppercase px-2 py-1 rounded">Before</div>
+       <div className="absolute top-2 right-2 bg-black/50 text-white text-xs font-bold uppercase px-2 py-1 rounded" style={{ opacity: sliderPosition > 5 ? 1 : 0 }}>After</div>
+    </div>
+  );
+};
+
+// Lightbox Component for immersive view
+const Lightbox = ({ items, activeIndex, onClose, onNext, onPrev }) => {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowRight') onNext();
+      if (e.key === 'ArrowLeft') onPrev();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose, onNext, onPrev]);
+
+  const item = items[activeIndex];
+
+  return (
+    <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center animate-fade-in">
+      <button onClick={onClose} className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-50">
+        <FiX size={40} />
+      </button>
+      <button onClick={onPrev} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-50 bg-black/20 p-3 rounded-full">
+        <FiArrowLeft size={32} />
+      </button>
+      <button onClick={onNext} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-50 bg-black/20 p-3 rounded-full">
+        <FiArrowRight size={32} />
+      </button>
+      <div className="w-full max-w-5xl p-4">
+        <div className="animate-fade-in-up">
+          <ImageComparisonSlider before={item.before} after={item.after} isLarge={true} />
+          <div className="mt-4 text-center">
+            <h3 className="text-2xl font-bold text-white">{item.title}</h3>
+            <p className="mt-1 text-gray-300">{item.description}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+const BeforeAfterHome = () => {
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const openLightbox = (index) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+  const nextItem = () => setLightboxIndex((prev) => (prev + 1) % beforeAfterData.length);
+  const prevItem = () => setLightboxIndex((prev) => (prev - 1 + beforeAfterData.length) % beforeAfterData.length);
+
+  return (
+    <div className="bg-neutral-950">
+      <div className="max-w-[85rem] px-4 py-16 sm:px-6 lg:px-8 lg:py-24 mx-auto">
+        <div className="max-w-3xl mb-12 lg:mb-16">
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-white leading-tight">
+            Transformations You Can See
+          </h2>
+          <p className="mt-4 text-lg text-gray-400">
+            Our commitment to quality is evident in every vehicle that leaves our shop. Here’s a glimpse of our recent work.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          {beforeAfterData.map((item, index) => (
+             <div key={index} className="bg-neutral-900 rounded-2xl overflow-hidden shadow-2xl group transition-all duration-300 hover:scale-105 hover:shadow-red-900/50 cursor-pointer" onClick={() => openLightbox(index)}>
+                <ImageComparisonSlider before={item.before} after={item.after} />
+                <div className="p-6">
+                    <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                    <p className="mt-2 text-gray-400">{item.description}</p>
+                </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {lightboxIndex !== null && (
+        <Lightbox 
+            items={beforeAfterData}
+            activeIndex={lightboxIndex}
+            onClose={closeLightbox}
+            onNext={nextItem}
+            onPrev={prevItem}
+        />
+      )}
+    </div>
+  );
+};
+
+export default BeforeAfterHome;

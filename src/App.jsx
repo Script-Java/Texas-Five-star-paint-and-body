@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import './App.css'
-import Homepage from './pages/home'
+import { useState, useEffect } from 'react'
+
+
 
 function App() {
 
+
   return (
-    <>
-      <Homepage></Homepage>
-    </>
+    <div className=""></div>
   )
 }
 

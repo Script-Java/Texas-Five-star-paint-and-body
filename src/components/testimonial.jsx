@@ -71,7 +71,7 @@ const Testimonials = () => {
               We're proud of our 5-star rating. But don't just take our word for it—see what our satisfied customers have to say about their experience.
             </p>
             <a
-              href="https://www.google.com/maps/place/Texas+Five+Star+Paint+%26+Body/@32.9202014,-96.6320146,16.25z/data=!4m8!3m7!1s0x864c1d1967da4713:0x2a5fdb5d453210e!8m2!3d32.9210903!4d-96.6327826!9m1!1b1!16s%2Fg%2F11rndn42mm?entry=ttu"
+              href="https://maps.app.goo.gl/P4kbxw5D3ktNxKi59"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-bold py-4 px-8 rounded-md text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-900/50"

@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import './index.css';
-import 'preline';
+
 
 // Import your layout and page components
 import RootLayout from './components/RootLayout';

@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: 'About Us', path: '/about' },
   ];
 
-  const googleMapsUrl = "https://www.google.com/maps/place/Texas+Five+Star+Paint+%26+Body/@32.9210948,-96.6353575,17z/data=!3m1!4b1!4m6!3m5!1s0x864c1d1967da4713:0x2a5fdb5d453210e!8m2!3d32.9210903!4d-96.6327826!16s%2Fg%2F11rndn42mm?entry=ttu";
+  const googleMapsUrl = "https://maps.app.goo.gl/P4kbxw5D3ktNxKi59";
 
   return (
     <>
